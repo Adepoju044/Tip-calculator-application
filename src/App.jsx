@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./header.jsx";
+import Header from "./Header.jsx";
 import Section from "./sections.jsx";
 
 function App() {
