@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "../tip-calculator-app-main/design"
+	},
+	{
+		"path": "../tip-calculator-app-main/images"
+	}
+],
+  "settings": {}
+}

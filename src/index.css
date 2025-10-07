@@ -1,0 +1,77 @@
+@import "tailwindcss";
+* {
+  box-sixing: border-box;
+}
+body {
+  background-color: hsl(189, 41%, 85%);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6vh;
+}
+.sections {
+  display: grid;
+  padding: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: inherit;
+}
+.buttons {
+  width: 90px;
+  height: 42px;
+  border-radius: 4px;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+}
+.custom {
+  width: 90px;
+  height: 42px;
+  border-radius: 4px;
+  margin-top: 3px;
+}
+.custom::placeholder {
+  padding-left: 7px;
+}
+.buttons:hover {
+  background-color: hsl(172, 67%, 45%);
+}
+.reset {
+  background-color: hsl(172, 67%, 45%);
+}
+.reset:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+.input {
+  border: none;
+  outline: none;
+}
+.input:active {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.input:hover {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+
+@media (max-width: 768px) {
+  .sections {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+  .buttons {
+    width: 9.2rem;
+    height: 47px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+  }
+  .custom {
+    width: 9.2rem;
+    height: 47px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+  }
+}
