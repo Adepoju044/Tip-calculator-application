@@ -120,7 +120,7 @@ export default function Form({
           />
         </div>
 
-        <h3 className="mt-5 mb-3 md:mt-8 font-bold">Number of people</h3>
+        <h3 className="mt-3 md:mt-6 font-bold">Number of people</h3>
         <p className={`error-text ${showError ? "show" : ""}`}>Can’t be zero</p>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2">
