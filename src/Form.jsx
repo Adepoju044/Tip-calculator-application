@@ -6,6 +6,8 @@ export default function Form({
   setTipAmount,
   setTotalPerson,
   totalPerson,
+  showError,
+  handleError,
 }) {
   return (
     <div>
@@ -16,7 +18,7 @@ export default function Form({
         Bill
       </h3>
 
-      <form>
+      <form onSubmit={handleError}>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2">
             <img
@@ -54,6 +56,7 @@ export default function Form({
             onClick={() => {
               setTipPercent(5);
               setTipAmount((Number(bill) * 5) / 100);
+              handleError(5);
             }}
           >
             5%
@@ -63,6 +66,7 @@ export default function Form({
             onClick={() => {
               setTipPercent(10);
               setTipAmount((Number(bill) * 10) / 100);
+              handleError(10);
             }}
           >
             10%
@@ -72,6 +76,7 @@ export default function Form({
             onClick={() => {
               setTipPercent(15);
               setTipAmount((Number(bill) * 15) / 100);
+              handleError(15);
             }}
           >
             15%
@@ -81,6 +86,7 @@ export default function Form({
             onClick={() => {
               setTipPercent(25);
               setTipAmount((Number(bill) * 25) / 100);
+              handleError(25);
             }}
           >
             25%
@@ -90,6 +96,7 @@ export default function Form({
             onClick={() => {
               setTipPercent(50);
               setTipAmount((Number(bill) * 50) / 100);
+              handleError(50);
             }}
           >
             50%
@@ -108,12 +115,13 @@ export default function Form({
               const customTip = e.target.value;
               setTipPercent(customTip);
               setTipAmount((Number(bill) * customTip) / 100);
+              handleError(customTip);
             }}
           />
         </div>
 
         <h3 className="mt-5 mb-3 md:mt-8 font-bold">Number of people</h3>
-
+        <p className={`error-text ${showError ? "show" : ""}`}>Can’t be zero</p>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2">
             <img
@@ -124,7 +132,8 @@ export default function Form({
           </span>
 
           <input
-            type="text"
+            type="number"
+            min="1"
             className="w-full h-11 focus:outline-0 input text-transparent"
             style={{
               paddingLeft: "2rem",
@@ -135,7 +144,9 @@ export default function Form({
           />
 
           <span className="absolute right-3 top-1/2 -translate-y-1/2 font-bold">
-            <p style={{ color: "hsl(189, 41%, 73%)" }}>{totalPerson || 0}</p>
+            <p style={{ color: "hsl(189, 41%, 73%)", paddingRight: "10px" }}>
+              {totalPerson || 0}
+            </p>
           </span>
         </div>
       </form>
