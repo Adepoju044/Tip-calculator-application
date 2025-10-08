@@ -16,7 +16,18 @@ function App() {
     setTotalPerson("");
     setTipPercent(0);
     setTipAmount(0);
+    setShowError(false);
   }
+  const [showError, setShowError] = useState(false);
+  const handleError = (percent) => {
+    if (Number(totalPerson) === 0) {
+      setShowError(true);
+      return;
+    }
+    setShowError(false);
+    setTipPercent(percent);
+    setTipAmount((Number(bill) * percent) / 100);
+  };
   return (
     <div className="flex flex-col justify-center items-center gap-8">
       <Header />
@@ -36,6 +47,8 @@ function App() {
           totalPeople={totalPeople}
           tipPerPerson={tipPerPerson}
           onReset={handleReset}
+          showError={showError}
+          handleError={handleError}
         />
       </div>
     </div>
