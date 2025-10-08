@@ -13,6 +13,8 @@ export default function Section({
   setTipAmount,
   tipPerPerson,
   onReset,
+  showError,
+  handleError,
 }) {
   return (
     <div className="sections" style={{ padding: "6.5%", gap: "2rem" }}>
@@ -27,6 +29,8 @@ export default function Section({
           setTotalPerson={setTotalPerson}
           totalPeople={totalPeople}
           setTipAmount={setTipAmount}
+          showError={showError}
+          handleError={handleError}
         />
       </div>
       <div
