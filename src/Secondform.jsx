@@ -8,7 +8,7 @@ export default function Secondform({ tipAmount, totalPeople, onReset }) {
         </div>
         <div>
           <h1
-            className="font-bold text-3xl"
+            className="amount font-bold text-3xl"
             style={{ color: "hsl(172, 67%, 45%)" }}
           >
             ${tipAmount.toFixed(2)}
@@ -22,7 +22,7 @@ export default function Secondform({ tipAmount, totalPeople, onReset }) {
         </div>
         <div>
           <h1
-            className="font-bold text-3xl"
+            className="amount font-bold text-3xl"
             style={{ color: "hsl(172, 67%, 45%)" }}
           >
             ${totalPeople ? totalPeople.toFixed(2) : 0.0}
