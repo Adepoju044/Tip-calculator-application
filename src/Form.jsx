@@ -31,7 +31,8 @@ export default function Form({
 
           <input
             type="text"
-            className="input w-full h-11 text-transparent"
+            maxLength="10"
+            className="input w-full h-11 text-transparent overflow-x-auto whitespace-nowrap"
             style={{
               paddingLeft: "2rem",
               backgroundColor: "hsl(189, 41%, 96%)",
@@ -135,7 +136,7 @@ export default function Form({
           <input
             type="number"
             min="1"
-            className={`w-full h-11 focus:outline-none text-transparent rounded-sm transition-all duration-200 ${
+            className={`input w-full h-11 focus:outline-none text-transparent rounded-sm transition-all duration-200 ${
               showError
                 ? "border-2 border-red-500 focus:border-red-500"
                 : "border-2 border-transparent focus:border-cyan-500"
