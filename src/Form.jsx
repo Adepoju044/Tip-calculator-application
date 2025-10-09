@@ -8,6 +8,7 @@ export default function Form({
   totalPerson,
   showError,
   handleError,
+  setShowError,
 }) {
   return (
     <div>
@@ -18,7 +19,7 @@ export default function Form({
         Bill
       </h3>
 
-      <form onSubmit={handleError}>
+      <form onSubmit={(e) => e.preventDefault()}>
         <div className="relative">
           <span className="absolute left-3 top-1/2 -translate-y-1/2">
             <img
@@ -134,13 +135,25 @@ export default function Form({
           <input
             type="number"
             min="1"
-            className="w-full h-11 focus:outline-0 input text-transparent"
+            className={`w-full h-11 focus:outline-none text-transparent rounded-sm transition-all duration-200 ${
+              showError
+                ? "border-2 border-red-500 focus:border-red-500"
+                : "border-2 border-transparent focus:border-cyan-500"
+            }`}
             style={{
               paddingLeft: "2rem",
               backgroundColor: "hsl(189, 41%, 92%)",
             }}
             value={totalPerson}
-            onChange={(e) => setTotalPerson(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              setTotalPerson(value);
+              if (Number(value) > 0) {
+                setShowError(false);
+              } else {
+                setShowError(true);
+              }
+            }}
           />
 
           <span className="absolute right-3 top-1/2 -translate-y-1/2 font-bold">
