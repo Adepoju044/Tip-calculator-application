@@ -49,6 +49,7 @@ function App() {
           onReset={handleReset}
           showError={showError}
           handleError={handleError}
+          setShowError={setShowError}
         />
       </div>
     </div>
