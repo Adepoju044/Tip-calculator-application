@@ -44,10 +44,12 @@ body {
 .reset:hover {
   background-color: hsl(185, 41%, 84%);
 }
+/*
 .input {
   border: none;
   outline: none;
 }
+  */
 .input:active {
   border: 2px solid hsl(172, 67%, 45%);
 }
